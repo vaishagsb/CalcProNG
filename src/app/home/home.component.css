@@ -1,0 +1,108 @@
+/* Hero Section Styles */
+.hero-content {
+    background: #000000;
+    padding: 40px 20px;
+    border-radius: 0px;
+  }
+  
+  .headline {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .sub-headline {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .cta-primary {
+    background-color: #000000; /* Optional: Add a background color */
+    font-size: 1em;
+    border-radius: 25px;
+    padding: 12px 24px;
+  }
+  
+  /* Categories Section Styles */
+.categories-section {
+  padding: 40px 20px;
+  background-color: #000000; /* Match background */
+}
+
+.categories-title {
+  color: #ffffff;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Scrollable Categories Grid */
+.categories-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 10px;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.categories-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for clean UI */
+}
+
+/* Category Card Styling */
+.category-card {
+  width: 250px;
+  height: 100px;
+  background-color: #1c1c1c; /* Darker background for cards */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px; /* More rounded corners */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions for effects */
+}
+
+/* Hover Effects */
+.category-card:hover {
+  background-color: #ff4081;
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Center the title inside the card */
+.category-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Styles for the "See All" button card */
+.see-all-card {
+  width: 200px;
+  height: 100px;
+  background-color: #1c1c1c; /* Darker background for cards */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.see-all-button {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 12px 24px;
+  text-align: center;
+}
+
+/* Main Content Styles */
+.main-content {
+  background-color: #000000; /* Optional: Add a background color */
+}

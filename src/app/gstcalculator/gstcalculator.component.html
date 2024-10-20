@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<div class="gst-calculator-wrapper">
+  <mat-card class="gst-calculator-card">
+    <mat-card-title class="centered-title">Indian GST Calculator</mat-card-title>
+    <mat-card-content class="gst-calculator-body">
+
+      <!-- GST Rate Dropdown -->
+      <mat-form-field appearance="fill">
+        <mat-label>GST Rate</mat-label>
+        <mat-select [(ngModel)]="gstRate" (selectionChange)="onGstRateChange()">
+          <mat-option *ngFor="let rate of gstRates" [value]="rate.value">
+            {{ rate.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Input for Price Excluding GST -->
+      <mat-form-field appearance="fill">
+        <mat-label>Price Excluding GST (in ₹)</mat-label>
+        <input matInput type="number" [(ngModel)]="priceExcludingGST" (input)="calculateGST()" required>
+      </mat-form-field>
+
+      <!-- Input for Price Including GST -->
+      <mat-form-field appearance="fill">
+        <mat-label>Price Including GST (in ₹)</mat-label>
+        <input matInput type="number" [(ngModel)]="priceIncludingGST" (input)="calculatePriceExcludingGST()" required>
+      </mat-form-field>
+
+      <!-- Calculate Button -->
+      <button mat-raised-button color="primary" (click)="calculateGST()">Calculate GST</button>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Display GST Result -->
+  <mat-card *ngIf="gstAmount" class="result-card">
+    <mat-card-title class="result-card-title">GST Calculation Result</mat-card-title>
+    <mat-card-content>
+      <div class="result-details">
+        <div class="result-item"><strong>GST Amount: </strong>₹{{ gstAmount.toFixed(2) }}</div>
+        <div class="result-item"><strong>Price Including GST: </strong>₹{{ priceIncludingGST.toFixed(2) }}</div>
+        <div class="result-item"><strong>Price Excluding GST: </strong>₹{{ priceExcludingGST.toFixed(2) }}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<app-footer></app-footer>

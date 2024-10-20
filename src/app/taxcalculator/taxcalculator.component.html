@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<div class="tax-calculator-wrapper">
+    <mat-card class="tax-calculator-card">
+        <mat-card-title class="centered-title">Income Tax Calculator (FY 2024-25)</mat-card-title>
+        <mat-card-content class="tax-calculator-body">
+        
+        <!-- Basic Details -->
+        <mat-form-field appearance="fill">
+          <mat-label>Age Group</mat-label>
+          <mat-select [(ngModel)]="user.ageGroup" required>
+            <mat-option value="under60">Under 60 years</mat-option>
+            <mat-option value="60to80">60 to 80 years</mat-option>
+            <mat-option value="above80">Above 80 years</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- Income Details -->
+        <mat-form-field appearance="fill">
+          <mat-label>Income from Salary</mat-label>
+          <input matInput type="number" [(ngModel)]="income.salary" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Income from Interest</mat-label>
+          <input matInput type="number" [(ngModel)]="income.interest">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Rental Income Received</mat-label>
+          <input matInput type="number" [(ngModel)]="income.rental">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Income from Digital Assets</mat-label>
+          <input matInput type="number" [(ngModel)]="income.digitalAssets">
+        </mat-form-field>
+  
+        <!-- Deductions -->
+        <mat-form-field appearance="fill">
+          <mat-label>80C Deductions (Max ₹1,50,000)</mat-label>
+          <input matInput type="number" [(ngModel)]="deductions.section80C" max="150000">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Medical Insurance (80D)</mat-label>
+          <input matInput type="number" [(ngModel)]="deductions.section80D">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Interest on Education Loan (80E)</mat-label>
+          <input matInput type="number" [(ngModel)]="deductions.section80E">
+        </mat-form-field>
+  
+        <!-- Calculate Button -->
+        <button mat-raised-button color="primary" (click)="calculateTax()">Calculate Tax</button>
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Display Results -->
+    <mat-card *ngIf="resultsAvailable" class="result-card">
+      <mat-card-title class="result-card-title">Tax Calculation Results</mat-card-title>
+      <mat-card-content>
+        <div class="result-details">
+          <div class="result-item">
+            <strong>Old Regime Tax:</strong> ₹ {{ oldRegimeTax }}
+          </div>
+          <div class="result-item">
+            <strong>New Regime Tax:</strong> ₹ {{ newRegimeTax }}
+          </div>
+          <div class="result-item">
+            <strong>Surcharge:</strong> ₹ {{ surcharge }}
+          </div>
+          <div class="result-item">
+            <strong>Health & Education Cess:</strong> ₹ {{ cess }}
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+
+<app-footer></app-footer>

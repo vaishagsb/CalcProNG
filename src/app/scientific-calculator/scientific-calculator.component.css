@@ -1,0 +1,91 @@
+/* Styles for the calculator card */
+.calculator-wrapper {
+  background-color: black; /* Set background color of the wrapper to black */
+  height: auto; /* Ensure wrapper takes the full height of the viewport */
+  display: flex;
+  justify-content: center; /* Center the card horizontally */
+  align-items: center; /* Center the card vertically */
+  margin: 0;
+}
+
+.calculator-card {
+  background-color: rgb(0, 0, 0);
+  width: 75vw; /* Set width to 75% of the viewport width */
+  max-width: 600px; /* Optional: Add a maximum width for larger screens */
+  margin: 0 auto; /* Center the card horizontally */
+}
+
+.calculator-body {
+  background-color: rgb(30, 30, 30);
+}
+
+/* Styles for desktop/tablet layout */
+.calculator-layout {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Balanced columns */
+  gap: 12px; /* Adjust gap between columns */
+}
+
+.scientific-functions, .basic-functions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Adjust gap between rows */
+}
+
+/* Mobile Layout */
+.mobile-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-layout .scientific-functions {
+  order: 2; /* Place scientific functions below basic functions */
+}
+
+.mobile-layout .basic-functions {
+  order: 1; /* Place basic functions above scientific functions */
+}
+
+.scientific-functions.mobile, .basic-functions.mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Adjust gap between rows */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px; /* Adjust gap between buttons */
+}
+
+.row button {
+  flex: 1;
+  margin: 4px; /* Adjust margin around buttons */
+  min-width: 60px; /* Adjust minimum width of buttons */
+  font-size: 16px; /* Adjust font size if needed */
+  padding: 8px; /* Adjust padding inside buttons */
+}
+
+/* Output Display */
+.output-display {
+  text-align: right; /* Align text to the right */
+  padding: 12px; /* Add padding around the output display */
+  font-size: 24px; /* Adjust font size for readability */
+  font-weight: bold; /* Make text bold */
+  background-color: #848484; /* Optional: Add a background color */
+  width: 100%; /* Ensure the output display takes up full width */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  display: flex;
+  justify-content: flex-end; /* Ensure text is aligned to the right */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .calculator-layout {
+    display: none; /* Hide grid layout on small screens */
+  }
+  .mobile-layout {
+    display: flex;
+  }
+}

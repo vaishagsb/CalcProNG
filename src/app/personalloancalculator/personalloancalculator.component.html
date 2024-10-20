@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<div class="personalloan-calculator-wrapper">
+    <mat-card class="personalloan-calculator-card">
+      <mat-card-title class="centered-title">Personal Loan EMI Calculator</mat-card-title>
+      <mat-card-content class="personalloan-calculator-body">
+  
+        <!-- Input for Loan Amount -->
+        <mat-form-field appearance="fill">
+          <mat-label>Loan Amount (in ₹)</mat-label>
+          <input matInput type="number" [(ngModel)]="loanAmount" required>
+        </mat-form-field>
+  
+        <!-- Input for Interest Rate -->
+        <mat-form-field appearance="fill">
+          <mat-label>Annual Interest Rate (in %)</mat-label>
+          <input matInput type="number" [(ngModel)]="interestRate" required>
+        </mat-form-field>
+  
+        <!-- Input for Loan Tenure -->
+        <mat-form-field appearance="fill">
+          <mat-label>Loan Tenure (in months)</mat-label>
+          <input matInput type="number" [(ngModel)]="loanTenure" required>
+        </mat-form-field>
+  
+        <!-- Calculate EMI Button -->
+        <button mat-raised-button color="primary" (click)="calculateEMI()">Calculate EMI</button>
+  
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Display EMI Result -->
+    <mat-card *ngIf="emi" class="result-card">
+      <mat-card-title class="result-card-title">Your EMI Result</mat-card-title>
+      <mat-card-content>
+        <div class="result-details">
+          <div class="result-item"><strong>EMI: </strong>₹{{ emi.toFixed(2) }}</div>
+          <div class="result-item"><strong>Total Interest Payable: </strong>₹{{ totalInterest.toFixed(2) }}</div>
+          <div class="result-item"><strong>Total Payment (Principal + Interest): </strong>₹{{ totalPayment.toFixed(2) }}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+
+<app-footer></app-footer>

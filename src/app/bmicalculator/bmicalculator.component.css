@@ -1,0 +1,116 @@
+/* Styles for the BMI calculator wrapper */
+.bmi-calculator-wrapper {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items horizontally */
+    max-width: 600px; /* Limit the width for better presentation */
+    margin: 0 auto; /* Center the container in the middle of the page */
+    margin-top: 20px;
+}
+
+.centered-title {
+    text-align: center; /* Centers the title text */
+    color: white; /* Changes the color to white */
+    font-size: 1.5rem; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold for emphasis */
+    margin-top: 10px;
+    margin-bottom: 10px; /* Add space below the title */
+}
+
+/* Styles for the BMI calculator card */
+.bmi-calculator-card {
+    background-color: rgb(40, 40, 40); /* Darker shade for the card background */
+    width: 75vw; /* Set width to 75% of the viewport width */
+    max-width: 600px; /* Add a maximum width for larger screens */
+    margin: 0 auto; /* Center the card horizontally */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Styles for the calculator body */
+.bmi-calculator-body {
+    background-color: rgb(30, 30, 30); /* Darker background for the body */
+    padding: 20px; /* Add padding inside the body */
+    border-radius: 10px; /* Match the card's rounded corners */
+    display: grid; /* Use grid layout for input fields */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 15px; /* Space between input fields */
+}
+
+/* Styles for input fields */
+mat-form-field {
+    width: 100%; /* Full width for input fields */
+}
+
+/* Styles for buttons */
+button {
+    grid-column: span 2; /* Make button span both columns */
+    margin-top: 15px; /* Space above buttons */
+    background-color: rgb(0, 150, 136); /* Teal color for buttons */
+    color: white; /* White text for buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: rgb(0, 120, 104); /* Darker teal on hover */
+}
+
+/* Styles for the result display */
+.result-card {
+    margin-top: 20px; /* Space above results */
+    background-color: rgb(50, 50, 50); /* Darker background for better contrast */
+    color: white; /* White text for readability */
+    padding: 20px; /* Padding inside the result card */
+    border-radius: 10px; /* Match the rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow for depth */
+    width: 100%; /* Full width to align with the form */
+}
+
+/* Result title style */
+.result-card-title {
+    font-size: 1.5rem; /* Increased font size for the title */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+/* Styles for result details */
+.result-details {
+    display: flex; /* Flexbox layout for results */
+    flex-direction: column; /* Stack results vertically */
+    gap: 10px; /* Space between result items */
+}
+
+/* Styles for individual result items */
+.result-item {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    padding: 10px; /* Padding for result items */
+    border-radius: 5px; /* Rounded corners for result items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .bmi-calculator-wrapper {
+        width: 90vw; /* Reduce width to fit better on small screens */
+        margin-top: 10px; /* Reduce top margin */
+    }
+
+    .bmi-calculator-body {
+        grid-template-columns: 1fr; /* Stack inputs vertically */
+        gap: 10px; /* Adjust the gap for smaller screens */
+    }
+
+    .bmi-calculator-card {
+        width: 90vw; /* Reduce card width to fit on small screens */
+        margin: 0 5vw; /* Center the card with margins */
+    }
+
+    button {
+        width: 100%; /* Make the button full width */
+    }
+
+    .result-card {
+        width: 90vw; /* Make result card fit better on small screens */
+    }
+}

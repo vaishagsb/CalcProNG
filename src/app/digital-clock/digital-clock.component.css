@@ -1,0 +1,45 @@
+.clock-toolbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+  }
+  
+  .clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+  }
+  
+  .time-display {
+    display: flex;
+    gap: 20px; /* Adjust as needed for spacing */
+    font-size: 1.5rem; /* Adjust font size as needed */
+  }
+  
+  .ap {
+    font-size: 1rem;
+    padding-left: 20px;
+    text-align: center;
+  }
+
+  /* Responsive adjustments */
+@media (max-width: 768px) {
+    .time-display {
+      font-size: 18px; /* Decrease font size on smaller screens */
+      gap: 6px; /* Decrease space between elements */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .time-display {
+      font-size: 14px; /* Further decrease font size on very small screens */
+      flex-direction: row; /* Stack time elements vertically */
+    }
+  
+    .clock-toolbar {
+      padding: 8px; /* Adjust padding for smaller screens */
+    }
+  }

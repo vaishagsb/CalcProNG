@@ -1,0 +1,101 @@
+/* Styles for the FD calculator wrapper */
+.fd-calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100%; /* Ensure full width on smaller screens */
+    padding: 0 10px; /* Add padding for smaller screens */
+}
+
+.centered-title {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Styles for the FD calculator card */
+.fd-calculator-card {
+    background-color: rgb(40, 40, 40);
+    width: 100%; /* Full width */
+    max-width: 600px; /* Limit maximum width */
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 10px; /* Add padding for better spacing */
+}
+
+/* Styles for the calculator body */
+.fd-calculator-body {
+    background-color: rgb(30, 30, 30);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr; /* Make it a single column layout by default */
+    gap: 15px;
+}
+
+/* Styles for input fields */
+mat-form-field {
+    width: 100%; /* Full width for input fields */
+}
+
+/* Styles for buttons */
+button {
+    width: 100%; /* Full width for button */
+    margin-top: 15px;
+    background-color: rgb(0, 150, 136);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(0, 120, 104);
+}
+
+/* Styles for the result display */
+.result-card {
+    margin-top: 20px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.result-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.result-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+    .fd-calculator-body {
+        grid-template-columns: repeat(2, 1fr); /* Switch to two columns for larger screens */
+    }
+
+    button {
+        grid-column: span 2; /* Make button span both columns on larger screens */
+    }
+}

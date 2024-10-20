@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<!-- Hero Section -->
+<mat-card class="hero-content">
+  <mat-card-content>
+    <h1 class="headline">The Ultimate Calculator Arena</h1>
+    <p class="sub-headline">Perform complex calculations with ease and precision, right from your browser.</p>
+    <button mat-raised-button color="accent" class="cta-primary" routerLink="/categories-home">Get Started</button>
+  </mat-card-content>
+</mat-card>
+
+<!-- Main Content -->
+<main class="main-content">
+  <mat-card class="calculator-card" #calculatorCard>
+    <app-scientific-calculator></app-scientific-calculator>
+  </mat-card>
+</main>
+
+<!-- Categories Section -->
+<section class="categories-section">
+  <h2 class="categories-title">Explore Calculator Categories</h2>
+
+  <!-- Scrollable Categories Grid -->
+  <div class="categories-scroll">
+
+    <mat-card class="category-card" [routerLink]="['/bmicalculator']" style="cursor: pointer;">
+      <mat-card-title class="category-card-title">BMI Calculator</mat-card-title>
+    </mat-card>
+
+    <mat-card class="category-card" [routerLink]="['/personalloancalculator']" style="cursor: pointer;">
+      <mat-card-title class="category-card-title">Personal Loan Calculator</mat-card-title>
+    </mat-card>
+
+    <mat-card class="category-card" [routerLink]="['/fixeddepositcalculator']" style="cursor: pointer;">
+      <mat-card-title class="category-card-title">Fixed Deposit Calculator</mat-card-title>
+    </mat-card>
+
+    <mat-card class="category-card" [routerLink]="['/currencyconverter']" style="cursor: pointer;">
+      <mat-card-title class="category-card-title">Currency Converter Calculator</mat-card-title>
+    </mat-card>
+    
+    <mat-card class="category-card" [routerLink]="['/retirementsavingscalculator']" style="cursor: pointer;">
+      <mat-card-title class="category-card-title">Retirement Savings Calculator</mat-card-title>
+    </mat-card>
+
+    <mat-card class="category-card" [routerLink]="['/caloriecalculator']" style="cursor: pointer;">
+      <mat-card-title class="category-card-title">Calorie Calculator</mat-card-title>
+    </mat-card>
+
+    <!-- "See All" card -->
+    <mat-card class="category-card see-all-card" [routerLink]="['/categories-home']" style="cursor: pointer;">
+      <mat-card-content>
+        <button mat-raised-button color="accent" class="see-all-button">
+          See All
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+<app-footer></app-footer>

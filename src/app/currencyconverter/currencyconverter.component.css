@@ -1,0 +1,126 @@
+/* Styles for the currency converter wrapper */
+.currency-converter-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.centered-title {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Styles for the currency converter card */
+.currency-converter-card {
+    background-color: rgb(40, 40, 40);
+    width: 75vw;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+/* Styles for the converter body */
+.currency-converter-body {
+    background-color: rgb(30, 30, 30);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Styles for input fields */
+mat-form-field {
+    width: 100%;
+}
+
+button {
+    grid-column: span 2;
+    margin-top: 15px;
+    background-color: rgb(0, 150, 136);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(0, 120, 104);
+}
+
+/* Styles for the result display */
+.result-card {
+    margin-top: 20px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.result-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.result-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .currency-converter-body {
+        grid-template-columns: 1fr; /* Stack inputs on mobile */
+    }
+
+    /* Adjust the card's padding and margins for smaller screens */
+    .currency-converter-card {
+        width: 90vw;
+        padding: 15px;
+    }
+
+    /* Reduce the gap between items for mobile */
+    .currency-converter-body {
+        gap: 10px;
+    }
+
+    /* Increase the button size for better touch targets */
+    button {
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+}
+
+/* Extra-small screens (below 480px) */
+@media (max-width: 480px) {
+    .currency-converter-card {
+        width: 100vw;
+        padding: 10px;
+    }
+
+    .currency-converter-wrapper {
+        padding: 10px;
+    }
+
+    .centered-title {
+        font-size: 1.25rem; /* Adjust title size for smaller screens */
+    }
+}

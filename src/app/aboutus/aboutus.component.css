@@ -1,0 +1,20 @@
+.about-calcpro-card {
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 20px auto; /* Center the card horizontally */
+    padding: 20px; /* Add padding inside the card */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Additional styling for text */
+mat-card-title {
+    color: #007BFF; /* Title color */
+    font-size: 1.5rem; /* Font size for the title */
+}
+
+p {
+    line-height: 1.6; /* Better readability */
+    margin: 10px 0; /* Spacing between paragraphs */
+    font-size: 1rem; /* Font size for paragraphs */
+    color: #333; /* Text color */
+}

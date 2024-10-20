@@ -1,0 +1,127 @@
+/* Styles for the calculator wrapper */
+.calorie-calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0 20px; /* Add padding for small screens */
+  }
+  
+  .centered-title {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for the calculator card */
+  .calorie-calculator-card {
+    background-color: rgb(40, 40, 40);
+    width: 75vw;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Styles for the calculator body */
+  .calorie-calculator-body {
+    background-color: rgb(30, 30, 30);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  /* Styles for input fields */
+  mat-form-field {
+    width: 100%;
+  }
+  
+  /* Styles for buttons */
+  button {
+    grid-column: span 2;
+    margin-top: 15px;
+    background-color: rgb(0, 150, 136);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: rgb(0, 120, 104);
+  }
+  
+  /* Styles for the result display */
+  .result-card {
+    margin-top: 20px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+  }
+  
+  .result-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .result-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: auto;
+  }
+  
+  .result-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Styles for Mobile */
+  @media (max-width: 600px) {
+    .calorie-calculator-body {
+      grid-template-columns: 1fr; /* Make input fields stack vertically */
+      gap: 10px; /* Reduce gap between inputs */
+    }
+  
+    .calorie-calculator-wrapper {
+      padding: 0 10px; /* Reduce side padding */
+    }
+  
+    .calorie-calculator-card {
+      width: 100%; /* Use full width on mobile */
+    }
+  
+    button {
+      grid-column: 1; /* Button spans entire width */
+    }
+  
+    .result-card {
+      width: 100%; /* Result card uses full width */
+      padding: 15px; /* Adjust padding */
+    }
+  
+    .centered-title {
+      font-size: 1.2rem; /* Adjust title size for mobile */
+    }
+  
+    .result-card-title {
+      font-size: 1.2rem; /* Adjust result title size */
+    }
+  
+    .result-item {
+      padding: 8px; /* Reduce padding inside result items */
+    }
+  }
+  

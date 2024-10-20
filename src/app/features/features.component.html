@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<div class="features-wrapper">
+    <h2 class="features-title">Features</h2>
+    <div class="feature-list">
+      <div class="feature-item" *ngFor="let feature of features">
+        <div class="icon-container">
+          <mat-icon color="accent" class="feature-icon">check_circle</mat-icon>
+        </div>
+        <div>
+          <h3 class="feature-heading">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <app-footer></app-footer>

@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<div class="calorie-calculator-wrapper">
+    <mat-card class="calorie-calculator-card">
+      <mat-card-title class="centered-title">Calorie Calculator</mat-card-title>
+      <mat-card-content class="calorie-calculator-body">
+  
+        <!-- Input for Age -->
+        <mat-form-field appearance="fill">
+          <mat-label>Age</mat-label>
+          <input matInput type="number" [(ngModel)]="age" required>
+        </mat-form-field>
+  
+        <!-- Input for Gender -->
+        <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <mat-select [(ngModel)]="gender" required>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- Input for Weight (in kg) -->
+        <mat-form-field appearance="fill">
+          <mat-label>Weight (kg)</mat-label>
+          <input matInput type="number" [(ngModel)]="weight" required>
+        </mat-form-field>
+  
+        <!-- Input for Height (in cm) -->
+        <mat-form-field appearance="fill">
+          <mat-label>Height (cm)</mat-label>
+          <input matInput type="number" [(ngModel)]="height" required>
+        </mat-form-field>
+  
+        <!-- Input for Activity Level -->
+        <mat-form-field appearance="fill">
+          <mat-label>Activity Level</mat-label>
+          <mat-select [(ngModel)]="activityLevel" required>
+            <mat-option value="sedentary">Sedentary (little or no exercise)</mat-option>
+            <mat-option value="light">Lightly Active (light exercise/sports 1-3 days a week)</mat-option>
+            <mat-option value="moderate">Moderately Active (moderate exercise/sports 3-5 days a week)</mat-option>
+            <mat-option value="active">Active (hard exercise/sports 6-7 days a week)</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- Calculate Button -->
+        <button mat-raised-button color="primary" (click)="calculateCalories()">Calculate</button>
+  
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Display Calculation Result -->
+    <mat-card *ngIf="dailyCalories !== null" class="result-card">
+      <mat-card-title class="result-card-title">Daily Caloric Intake</mat-card-title>
+      <mat-card-content>
+        <div class="result-details">
+          <div class="result-item">
+            You need approximately 
+            <strong>{{ dailyCalories }} calories</strong> 
+            to maintain your current weight.
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <app-footer></app-footer>
+
+  

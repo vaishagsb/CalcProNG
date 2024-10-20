@@ -1,0 +1,29 @@
+<!-- Navbar -->
+<mat-toolbar class="black-toolbar">
+    <span class="logo" routerLink="/home">CalcPro</span>
+    <span class="spacer"></span>
+  
+    <!-- Desktop Menu for larger screens -->
+    <ng-container *ngIf="isScreenLarge">
+      <div class="desktop-menu">
+        <button mat-button routerLink="/currencyconverter">Currency Converter</button>
+        <button mat-button routerLink="/features">Features</button>
+        <button mat-button routerLink="/contact">Contact</button>
+        <button mat-button routerLink="/aboutus">About Us</button>
+      </div>
+    </ng-container>
+  
+    <!-- Mobile Menu Toggle (Hamburger) -->
+    <button mat-icon-button (click)="toggleMobileMenu()" aria-label="Toggle mobile menu" class="menu-toggle">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <!-- Mobile Dropdown Menu -->
+  <div *ngIf="isMobileMenuOpen" class="mobile-menu">
+    <button mat-button routerLink="/currencyconverter" (click)="toggleMobileMenu()">Currency Converter</button>
+    <button mat-button routerLink="/features" (click)="toggleMobileMenu()">Features</button>
+    <button mat-button routerLink="/contact" (click)="toggleMobileMenu()">Contact</button>
+    <button mat-button routerLink="/aboutus" (click)="toggleMobileMenu()">About Us</button>
+  </div>
+  

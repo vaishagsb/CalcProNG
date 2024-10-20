@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<div class="fd-calculator-wrapper">
+    <mat-card class="fd-calculator-card">
+      <mat-card-title class="centered-title">Fixed Deposit (FD) Calculator</mat-card-title>
+      <mat-card-content class="fd-calculator-body">
+  
+        <!-- Input for Principal Amount -->
+        <mat-form-field appearance="fill">
+          <mat-label>Principal Amount (in ₹)</mat-label>
+          <input matInput type="number" [(ngModel)]="principalAmount" required>
+        </mat-form-field>
+  
+        <!-- Input for Interest Rate -->
+        <mat-form-field appearance="fill">
+          <mat-label>Annual Interest Rate (in %)</mat-label>
+          <input matInput type="number" [(ngModel)]="interestRate" required>
+        </mat-form-field>
+  
+        <!-- Input for Tenure -->
+        <mat-form-field appearance="fill">
+          <mat-label>Tenure (in years)</mat-label>
+          <input matInput type="number" [(ngModel)]="tenure" required>
+        </mat-form-field>
+  
+        <!-- Compound Frequency -->
+        <mat-form-field appearance="fill">
+          <mat-label>Compounding Frequency</mat-label>
+          <mat-select [(ngModel)]="compoundingFrequency">
+            <mat-option value="1">Yearly</mat-option>
+            <mat-option value="4">Quarterly</mat-option>
+            <mat-option value="12">Monthly</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- Calculate Button -->
+        <button mat-raised-button color="primary" (click)="calculateFD()">Calculate Maturity</button>
+  
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Display FD Result -->
+    <mat-card *ngIf="maturityAmount" class="result-card">
+      <mat-card-title class="result-card-title">Your FD Result</mat-card-title>
+      <mat-card-content>
+        <div class="result-details">
+          <div class="result-item"><strong>Maturity Amount: </strong>₹{{ maturityAmount.toFixed(2) }}</div>
+          <div class="result-item"><strong>Total Interest Earned: </strong>₹{{ totalInterest.toFixed(2) }}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <app-footer></app-footer>
+
+  

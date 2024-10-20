@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<div class="retirement-savings-wrapper">
+    <mat-card class="retirement-savings-card">
+      <mat-card-title class="centered-title">Retirement Savings Calculator</mat-card-title>
+      <mat-card-content class="retirement-savings-body">
+  
+        <!-- Input for Current Savings -->
+        <mat-form-field appearance="fill">
+          <mat-label>Current Savings (INR)</mat-label>
+          <input matInput type="number" [(ngModel)]="currentSavings" required>
+        </mat-form-field>
+  
+        <!-- Input for Expected Annual Return Rate -->
+        <mat-form-field appearance="fill">
+          <mat-label>Expected Annual Return Rate (%)</mat-label>
+          <input matInput type="number" [(ngModel)]="annualReturn" required>
+        </mat-form-field>
+  
+        <!-- Input for Years Until Retirement -->
+        <mat-form-field appearance="fill">
+          <mat-label>Years Until Retirement</mat-label>
+          <input matInput type="number" [(ngModel)]="yearsUntilRetirement" required>
+        </mat-form-field>
+  
+        <!-- Input for Desired Retirement Corpus -->
+        <mat-form-field appearance="fill">
+          <mat-label>Desired Retirement Corpus (INR)</mat-label>
+          <input matInput type="number" [(ngModel)]="desiredCorpus" required>
+        </mat-form-field>
+  
+        <!-- Calculate Button -->
+        <button mat-raised-button color="primary" (click)="calculateSavings()">Calculate</button>
+  
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Display Calculation Result -->
+    <mat-card *ngIf="savingsNeeded !== null" class="result-card">
+      <mat-card-title class="result-card-title">Savings Needed</mat-card-title>
+      <mat-card-content>
+        <div class="result-details">
+          <div class="result-item">
+            You need to save 
+            <strong>{{ savingsNeeded | currency:'INR':'symbol' }}</strong> 
+            each year to reach your desired retirement corpus of 
+            <strong>{{ desiredCorpus | currency:'INR':'symbol' }}</strong>.
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <app-footer></app-footer>

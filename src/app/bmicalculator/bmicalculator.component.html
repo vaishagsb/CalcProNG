@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<app-digital-clock></app-digital-clock>
+
+<div class="bmi-calculator-wrapper">
+    <mat-card class="bmi-calculator-card">
+      <mat-card-title class="centered-title">BMI Calculator</mat-card-title>
+      <mat-card-content class="bmi-calculator-body">
+  
+        <!-- Input for Height -->
+        <mat-form-field appearance="fill">
+          <mat-label>Height (in cm)</mat-label>
+          <input matInput type="number" [(ngModel)]="height" required>
+        </mat-form-field>
+  
+        <!-- Input for Weight -->
+        <mat-form-field appearance="fill">
+          <mat-label>Weight (in kg)</mat-label>
+          <input matInput type="number" [(ngModel)]="weight" required>
+        </mat-form-field>
+  
+        <!-- Calculate Button -->
+        <button mat-raised-button color="primary" (click)="calculateBMI()">Calculate BMI</button>
+  
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Display BMI Results -->
+    <mat-card *ngIf="bmi" class="result-card">
+      <mat-card-title class="result-card-title">Your BMI Result</mat-card-title>
+      <mat-card-content>
+        <div class="result-details">
+          <div class="result-item"><strong>BMI: </strong>{{ bmi.toFixed(2) }}</div>
+          <div class="result-item"><strong>Status: </strong>{{ bmiStatus }}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+
+  <app-footer></app-footer>
+  
